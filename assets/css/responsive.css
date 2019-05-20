@@ -1,0 +1,76 @@
+/* Medium Layout:1280px. */
+@media only screen and (min-width:992px) and (max-width:1200px) {
+	
+	.ebooknow .btn.btn-default.ebutton,
+	.btn.btn-default.ebutton.readmore {
+		font-size: 11px;
+		font-weight: 700;
+		padding: 6px 0px;
+		width: 100px;
+	}
+	.my-btn.btn-color{
+		font-size: 11px;
+		padding: 7px 25px;
+	}
+	.history-area-content{
+		padding-top:0px;
+	}
+}
+
+/* Tablet Layout: 768px. */
+@media only screen and (min-width:768px) and (max-width:991px) {
+	.history-area-content{
+		padding-top:0px;
+	}
+	.speakers-member .member-desc {
+		padding: 15px 0px 25px;
+		background: #fff;
+		z-index: 99;
+	}
+	.popup-video-area>a {
+		position: absolute;
+		top: -80px;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.ebooknow .btn.btn-default.ebutton,
+	.btn.btn-default.ebutton.readmore {
+		font-size: 9px;
+		font-weight: 700;
+		padding: 8px 0px;
+		width: 70px;
+	}
+	.my-btn.btn-color{
+		font-size: 10px;
+		padding: 7px 4px;
+	}
+}
+/* wide Mobile Layout;488px  */
+@media only screen and (min-width:480px) and (max-width:767px) {
+	
+}
+/* Mobile Layout: 320px;. */
+@media only screen and (max-width:767px) {
+	.history-area-content{
+		padding-top:15px;
+	}
+	.navbar-brand>a>img{
+		margin-left:0px;
+	}
+	.ebooknow .btn.btn-default.ebutton,
+	.btn.btn-default.ebutton.readmore {
+		font-size: 11px;
+		font-weight: 700;
+		padding: 6px 0px;
+		width: 100px;
+	}
+	.my-btn.btn-color{
+		font-size: 11px;
+		padding: 7px 25px;
+	}
+}	
