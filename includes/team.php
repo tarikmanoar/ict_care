@@ -17,150 +17,30 @@
 				</div>
 				
 				<div class="row">
+					<?php 
+
+					$select_cat = "SELECT * FROM team_member";
+				    $cat_sql    = query($select_cat);
+				    while($row = mysqli_fetch_assoc($cat_sql)):
+					?>
 					<div class="col-md-3 col-12 col-xl-3 fw-600">
-						<div class="speaker-col wow fadeInLeft  animated" data-wow-duration=".5s" data-wow-delay="0s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0s; animation-name: fadeInLeft;">
-							<div class="speaker-box">
+						<div class="speaker-col wow fadeInLeft  animated" data-wow-duration=".5s" data-wow-delay="0s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0s; animation-name: fadeInLeft;min-height: 390px;">
+							<div class="speaker-box" style="min-height: 215px;">
 								<div class="pic">
-									<img src="assets/img/Managing-Director.jpg" alt="">
+									<img src="admin/<?php  echo $row['image']; ?>" alt="">
 									<ul class="social">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="<?php  echo $row['facebook']; ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="<?php  echo $row['twitter']; ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="speaker-info">
-								<h6>Jon Moris</h6>
-								<span>Founder &amp; CEO, GM IT</span>
+								<h6><?php  echo $row['name']; ?></h6>
+								<span><?php  echo $row['position']; ?></span>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 col-12 col-xl-3 fw-600">
-						<div class="speaker-col wow fadeInLeft  animated" data-wow-duration=".5s" data-wow-delay=".2s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeInLeft;">
-							<div class="speaker-box">
-								<div class="pic">
-									<img src="assets/img/Graphics-Designer.jpg" alt="">
-									<ul class="social">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="speaker-info">
-								<h6>Jon Moris</h6>
-								<span>Founder &amp; CEO, MR Web</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-12 col-xl-3 fw-600">
-						<div class="speaker-col wow fadeInLeft  animated" data-wow-duration=".5s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;">
-							<div class="speaker-box">
-								<div class="pic">
-									<img src="assets/img/Web-Developer.jpg" alt="">
-									<ul class="social">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="speaker-info">
-								<h6>Jon Moris</h6>
-								<span>CEO, Envato</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-12 col-xl-3 fw-600">
-						<div class="speaker-col wow fadeInLeft  animated" data-wow-duration=".5s" data-wow-delay=".4s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.4s; animation-name: fadeInLeft;">
-							<div class="speaker-box">
-								<div class="pic">
-									<img src="assets/img/Online-Marketing-Officer.jpg" alt="">
-									<ul class="social">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="speaker-info">
-								<h6>Jon Moris</h6>
-								<span>Founder &amp; CEO, Upwork</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-12 col-xl-3 fw-600">
-						<div class="speaker-col wow fadeInLeft  animated" data-wow-duration=".5s" data-wow-delay="0s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0s; animation-name: fadeInLeft;">
-							<div class="speaker-box">
-								<div class="pic">
-									<img src="assets/img/NH.jpg" alt="">
-									<ul class="social">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="speaker-info">
-								<h6>Jon Moris</h6>
-								<span>Web Developer, MR IT</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-12 col-xl-3 fw-600">
-						<div class="speaker-col wow fadeInLeft  animated" data-wow-duration=".5s" data-wow-delay=".2s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.2s; animation-name: fadeInLeft;">
-							<div class="speaker-box">
-								<div class="pic">
-									<img src="assets/img/candy.jpg" alt="">
-									<ul class="social">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="speaker-info">
-								<h6>Jon Moris</h6>
-								<span>Web Designer,99Market</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-12 col-xl-3 fw-600">
-						<div class="speaker-col wow fadeInLeft  animated" data-wow-duration=".5s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.3s; animation-name: fadeInLeft;">
-							<div class="speaker-box">
-								<div class="pic">
-									<img src="assets/img/Dolu.jpg" alt="">
-									<ul class="social">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="speaker-info">
-								<h6>Jon Moris</h6>
-								<span>Founder &amp; CEO, GM IT</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 col-12 col-xl-3 fw-600">
-						<div class="speaker-col wow fadeInLeft  animated" data-wow-duration=".5s" data-wow-delay=".4s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0.4s; animation-name: fadeInLeft;">
-							<div class="speaker-box">
-								<div class="pic">
-									<img src="assets/img/Shu.jpg" alt="">
-									<ul class="social">
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="speaker-info">
-								<h6>Jon Moris</h6>
-								<span>Founder &amp; CEO, Fiverr</span>
-							</div>
-						</div>
-					</div>
+				<?php endwhile ?>
 				</div>
 				
 				<!-- <div class="section-padding"></div> -->

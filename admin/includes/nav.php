@@ -7,19 +7,18 @@
                 <li class="active"><a href="index.php"><i class="la  la-tachometer"></i><span>Dashboard</span></a>
 
                 </li>
-
-
-                <li><a href="#dropdown-app" aria-expanded="false" data-toggle="collapse"><i class="la la-book"></i><span>Posts</span></a>
+                <!-- <li><a href="#dropdown-app" aria-expanded="false" data-toggle="collapse"><i class="la la-book"></i><span>Posts</span></a>
                     <ul id="dropdown-app" class="collapse list-unstyled pt-0">
                         <li><a href="all_posts.php">All Posts</a></li>
                         <li><a href="add_post.php">Add Post</a></li>
                         <li><a href="category.php">Category</a></li>
-                        <!-- <li><a href="tag.php">Tags</a></li> -->
+                        <li><a href="tag.php">Tags</a></li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
 
             <ul class="list-unstyled">
+                <li><a href="news.php"><i class="la la-bullhorn"></i><span>News</span></a></li>
                 <li><a href="#dropdown-ui" aria-expanded="false" data-toggle="collapse"><i class="la la-bars"></i><span>Menu</span></a>
                     <ul id="dropdown-ui" class="collapse list-unstyled pt-0">
                         <li><a href="all_menu_item.php">All Item</a></li>
@@ -29,6 +28,8 @@
                 <li><a href="history.php"><i class="la la-history"></i><span>History</span></a></li>
                 <li><a href="client.php"><i class="la  la-user-secret"></i><span>Client</span></a></li>
                 <li><a href="course_cat.php"><i class="la la-code-fork"></i><span>Course Category</span></a></li>
+                <li><a href="team_members.php"><i class="la la-group"></i><span>Team Members</span></a></li>
+                <li><a href="teachers.php"><i class="la la-user"></i><span>Teachers</span></a></li>
                 <li><a href="goal.php"><i class="la la-bullseye"></i><span>Goal</span></a></li>
                 <li><a href="event.php"><i class="la  la-mortar-board "></i><span>Event</span></a></li>
 

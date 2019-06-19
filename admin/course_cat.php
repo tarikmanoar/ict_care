@@ -34,14 +34,14 @@
                         <?php 
 
                         if (isset($_POST['submit'])) {
-                            $courseTitle = $_POST['courseTitle'];
-                            $courseDiscribe = $_POST['courseDiscribe'];
-                            $courseBenefit = $_POST['courseBenefit'];
-                            $courseIcon = $_POST['courseIcon'];
-                            $courseFee = $_POST['courseFee'];
-                            $courseValidate = $_POST['courseValidate'];
+                            $courseTitle    = real_escape($_POST['courseTitle']);
+                            $courseDiscribe = real_escape($_POST['courseDiscribe']);
+                            $courseBenefit  = real_escape($_POST['courseBenefit']);
+                            $courseIcon     = real_escape($_POST['courseIcon']);
+                            $courseFee      = real_escape($_POST['courseFee']);
+                            $courseValidate = real_escape($_POST['courseValidate']);
 
-                            $courseImage = $_FILES['courseImage'];
+                            $courseImage = real_escape($_FILES['courseImage']);
     // Slider Images upload
     $img_name     = $courseImage['name'];
     $img_tmp      = $courseImage['tmp_name'];
@@ -184,8 +184,8 @@ if (!empty($courseTitle)) {
                 <?php 
 
                 if (isset($_POST['submitItem'])) {
-                    $courseItem   = $_POST['courseItem'];
-                    $insertCourse = $_POST['insertCourse'];
+                    $courseItem   = real_escape($_POST['courseItem']);
+                    $insertCourse = real_escape($_POST['insertCourse']);
 
                     $insertItem   = "INSERT INTO course_item (courseItem , courseTitle) VALUES ('$courseItem','$insertCourse')";
                     $insertQuery  = query($insertItem);

@@ -13,7 +13,7 @@
 					</div>
 					<div class="col-md-2">
 						<div class="top-course-button">
-							<span style="float:right;"><a class="btn btn-default my-btn btn-color" href="#" role="button">VIEW MORE</a></span>
+							<span style="float:right;"><a class="btn btn-default my-btn btn-color" href="courses.php" role="button">VIEW MORE</a></span>
 						</div>
 					</div>
 				</div>

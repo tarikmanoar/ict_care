@@ -1,6 +1,25 @@
 <?php include("includes/header.php") ?>
+<!-- Begin Preloader -->
+
+
 <?php include("includes/preloader.php") ?>
+
+
+<!-- End Preloader -->
+
+
+
 <?php include("includes/top_nav.php") ?>
+
+
+<!-- End Topbar -->
+
+
+
+
+<!-- End Header -->
+<!-- Begin Page Content -->
+
 <?php include("includes/nav.php") ?>
 <!-- End Left Sidebar -->
 <div class="content-inner">
@@ -10,11 +29,11 @@
             <div class="page-header">
                 <div class="d-flex align-items-center">
 
-                    <h2 class="page-header-title">Categories</h2>
+                    <h2 class="page-header-title">News</h2>
                     <div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.php"><i class="ti ti-home"></i></a></li>
-                            <li class="breadcrumb-item active">Categories</li>
+                            <li class="breadcrumb-item active">News</li>
                         </ul>
                     </div>
                 </div>
@@ -32,11 +51,10 @@
                         <?php 
 
                             if (isset($_POST['submit'])) {
-                                $cat_title = real_escape($_POST['cat_title']);
-                                $cat_link = real_escape($_POST['cat_link']) ;
-                                $cat_insert = "INSERT INTO category(title,page_link) VALUES('$cat_title','$cat_link')";
-                                $cat_sql = query($cat_insert);
-                                if (!$cat_sql) {
+                                $newsTitle = real_escape($_POST['newsTitle']);
+                                $news_insert = "INSERT INTO news (newsTitle) VALUES('$newsTitle')";
+                                $news_sql = query($news_insert);
+                                if (!$news_sql) {
                                     die("Query Failed " . mysqli_error($dbconn));
                                 }else {
                                     echo $cat_success = "<p style='color: #17a200;padding: 5px;background: #b9ffcf;text-align: center;'>Menu Created Successfully!</p>";
@@ -48,24 +66,16 @@
                         ?>
                         <form class="form-horizontal dropzone" action="" method="post">
                             <div class="form-group row d-flex align-items-center mb-5">
-                                <label class="col-lg-3 form-control-label">Menu Title</label>
+                                <label class="col-lg-3 form-control-label">News Title</label>
                                 <div class="col-lg-9">
-                                    <input type="text" name="cat_title" class="form-control" >
-                                </div>
-                            </div>
-
-
-                            <div class="form-group row d-flex align-items-center mb-5">
-                                <label class="col-lg-3 form-control-label">Menu Link</label>
-                                <div class="col-lg-9">
-                                    <input type="text" name="cat_link" class="form-control">
+                                    <input type="text" name="newsTitle" class="form-control" >
                                 </div>
                             </div>
 
                             <div class="form-group row d-flex align-items-center mb-5">
                                 <label class="col-lg-3 form-control-label"></label>
                                 <div class="col-lg-9">
-                                    <button type="submit" name="submit" class="btn btn-primary">Add Menu Item</button>
+                                    <button type="submit" name="submit" class="btn btn-primary">Add News</button>
                                 </div>
                             </div>
 
@@ -73,32 +83,23 @@
                         <?php 
                             if (isset($_GET['edit'])) {
                                 $id         = real_escape($_GET['edit']);
-                                $select_cat = "SELECT * FROM category WHERE id='$id'";
+                                $select_cat = "SELECT * FROM news WHERE id='$id'";
                                 $cat_sql    = query($select_cat);
                                 while ($row = mysqli_fetch_assoc($cat_sql)):?>
                             
-                                <h2 class="page-header-title">Update Categories</h2><br><br>
-                                <?php if(isset($cat_success)){echo $cat_success;} ?>
+                                <h2 class="page-header-title">Update News</h2><br><br>
                                 <form class="form-horizontal dropzone" action="" method="post">
                                     <div class="form-group row d-flex align-items-center mb-5">
-                                        <label class="col-lg-3 form-control-label">Menu Title</label>
+                                        <label class="col-lg-3 form-control-label">News Title</label>
                                         <div class="col-lg-9">
-                                            <input type="text" name="cat_title" class="form-control" value="<?php echo $row['title'];?>">
-                                        </div>
-                                    </div>
-
-
-                                    <div class="form-group row d-flex align-items-center mb-5">
-                                        <label class="col-lg-3 form-control-label">Menu Link</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" name="cat_link" class="form-control" value="<?php echo $row['page_link'];?>">
+                                            <input type="text" name="newsTitle" class="form-control" value="<?php echo $row['newsTitle'];?>" autocomplete="off">
                                         </div>
                                     </div>
 
                                     <div class="form-group row d-flex align-items-center mb-5">
                                         <label class="col-lg-3 form-control-label"></label>
                                         <div class="col-lg-9">
-                                            <button type="submit" name="update" class="btn btn-success">Update Menu Item</button>
+                                            <button type="submit" name="update" class="btn btn-success">Update News Item</button>
                                         </div>
                                     </div>
 
@@ -110,14 +111,13 @@
                             }
                             if (isset($_POST['update'])) {
                                 $id         = real_escape($_GET['edit']);
-                                $cat_title  = real_escape($_POST['cat_title']);
-                                $cat_link   = real_escape($_POST['cat_link']) ;
-                                $cat_insert = "UPDATE category SET title = '$cat_title' , page_link = '$cat_link' WHERE id = '$id'";
+                                $newsTitle  = real_escape($_POST['newsTitle']);
+                                $cat_insert = "UPDATE news SET newsTitle = '$newsTitle' WHERE id = '$id'";
                                 $cat_sql    = query($cat_insert);
                                 if (!$cat_sql) {
                                     die("Query Failed " . mysqli_error($dbconn));
                                 }else {
-                                    $cat_success = "<p style='color: #17a200;padding: 5px;background: #b9ffcf;text-align: center;'>Menu Update Successfully!</p>";
+                                    header("Location: news.php");
                                 }
                             }
                          ?>
@@ -131,12 +131,12 @@
 
     if (isset($_GET['delete'])) {
         $id          = real_escape($_GET['delete']);
-        $post_delete = "DELETE FROM category WHERE id='$id'";
+        $post_delete = "DELETE FROM news WHERE id='$id'";
         $delete_sql  = query($post_delete); 
         if (!$delete_sql) {
             die("DELETION ERROR " . mysqli_error($dbconn));
         }else {
-            header("Location: all_menu_item.php");
+            header("Location: news.php");
         }
     }
 
@@ -160,7 +160,7 @@
                                     <tbody>
                                 <?php 
 
-                                    $select_cat = "SELECT * FROM category";
+                                    $select_cat = "SELECT * FROM news";
                                     $cat_sql    = query($select_cat);
                                     while ($row = mysqli_fetch_assoc($cat_sql)):
 
@@ -168,10 +168,10 @@
 
                                         <tr>
                                             <td><span class="text-primary"><?php echo $row['id'] ?></span></td>
-                                            <td><?php echo $row['title'] ?></td>
+                                            <td><?php echo $row['newsTitle'] ?></td>
                                             <td class="td-actions">
-                                                <a href="all_menu_item.php?edit=<?php echo $row['id'] ?>"><i class="la la-edit edit"></i></a>
-                                                <a href="all_menu_item.php?delete=<?php echo $row['id'] ?>"><i class="la la-close delete"></i></a>
+                                                <a href="news.php?edit=<?php echo $row['id'] ?>"><i class="la la-edit edit"></i></a>
+                                                <a href="news.php?delete=<?php echo $row['id'] ?>"><i class="la la-close delete"></i></a>
                                             </td>
                                         </tr>
                                 <?php endwhile  ?>

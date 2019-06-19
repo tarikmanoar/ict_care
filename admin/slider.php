@@ -49,10 +49,10 @@
 <?php 
 
     if (isset($_POST['add_slider'])) {
-        $slider_title = $_POST['slider_title'];
-        $slider_typer = $_POST['slider_typer'];
-        $slider_dis   = $_POST['slider_dis'];
-        $slider_show   = $_POST['slider_show'];
+        $slider_title = real_escape($_POST['slider_title']);
+        $slider_typer = real_escape($_POST['slider_typer']);
+        $slider_dis   = real_escape($_POST['slider_dis']);
+        $slider_show  = real_escape($_POST['slider_show']);
 
         // Slider Images upload
         $img_name     = $_FILES['slider_img']['name'];

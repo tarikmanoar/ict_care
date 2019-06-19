@@ -2,8 +2,26 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="progress" style="height:50px; font-size: 24px;">
-		  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80px;height:50px;color: #fff"><b>News :</b></div>
-		  <div class="progress-bar bg-light progress-bar-striped progress-bar-animated" style="width:100%;height:50px;color: #000"><marquee>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, repellendus eos dolore voluptatem reprehenderit, doloremque quibusdam mollitia quo voluptatum est totam. </marquee></div>
+		  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80px;height:50px;color: #fff">
+		  	<b>News :</b>
+		  </div>
+		  <div class="progress-bar bg-light progress-bar-striped progress-bar-animated" style="width:100%;height:50px;color: #000">
+
+		  	<?php 
+		  		$selectNews = query("SELECT * FROM news ORDER BY id DESC ");
+		  	?>
+		  	<marquee onmouseover="this.stop();" onmouseout="this.start();">
+		  		<?php 
+		  			if (mysqli_num_rows($selectNews) > 0){
+		  				while ($row = mysqli_fetch_assoc($selectNews)) {
+		  				    echo $row['newsTitle']." "." " ;
+		  				}
+		  			}
+		  		?>
+		  	</marquee>
+
+		  </div>
+
 		</div>
 	</div>
 </div>

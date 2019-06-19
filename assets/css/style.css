@@ -723,9 +723,8 @@ img {
     transform: scale(0.9);
 }
 .speaker-box img{
-    width: 100%;
-    height: auto;
-    border-radius: 50%;
+    min-width: 260px;
+    min-height: 260px;
 }
 .speaker-box .social{
     width: 100%;
