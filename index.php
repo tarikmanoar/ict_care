@@ -1,14 +1,15 @@
 <?php include "includes/header.php" ?>
-<?php include "includes/nav.php" ?>		
-<?php include "includes/slider.php" ?>
-<!-- <div class="row">
+<div class="row">
 	<div class="col-md-12">
 		<div class="progress" style="height:50px; font-size: 24px;">
 		  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80px;height:50px;color: #fff"><b>News :</b></div>
-		  <div class="progress-bar bg-light progress-bar-striped progress-bar-animated" style="width:100%;height:50px;color: #000"><marquee>No news now </marquee></div>
+		  <div class="progress-bar bg-light progress-bar-striped progress-bar-animated" style="width:100%;height:50px;color: #000"><marquee>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, repellendus eos dolore voluptatem reprehenderit, doloremque quibusdam mollitia quo voluptatum est totam. </marquee></div>
 		</div>
 	</div>
-</div>	 -->	
+</div>
+<?php include "includes/nav.php" ?>		
+<?php include "includes/slider.php" ?>
+		
 <?php include "includes/history.php" ?>		
 <?php include "includes/courseCategory.php" ?>		
 <?php include "includes/topCourses.php" ?>		

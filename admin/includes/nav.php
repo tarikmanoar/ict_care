@@ -14,7 +14,7 @@
                         <li><a href="all_posts.php">All Posts</a></li>
                         <li><a href="add_post.php">Add Post</a></li>
                         <li><a href="category.php">Category</a></li>
-                        <li><a href="tag.php">Tags</a></li>
+                        <!-- <li><a href="tag.php">Tags</a></li> -->
                     </ul>
                 </li>
             </ul>

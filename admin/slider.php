@@ -73,7 +73,7 @@
                             if (in_array($img_ext,$ext_arry)) {
                                 if ($img_error == 0) {
                                     if ($img_size < 2000000) {
-                                        $img_new_name = "slider".uniqid('',true).'.'.$img_ext;
+                                        $img_new_name = "slider_".uniqid('',true).'.'.$img_ext;
                                         $img_des      = "upload/slider/".$img_new_name;
                                         $img_move     = move_uploaded_file($img_tmp,$img_des);
 
