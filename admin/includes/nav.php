@@ -41,14 +41,6 @@
                     </ul>
                 </li>
             </ul>
-
-            <ul class="list-unstyled">
-                <li><a href="#dropdown-icon" aria-expanded="false" data-toggle="collapse"><i class="la la-comment"></i><span>Comments</span></a>
-                    <ul id="dropdown-icon" class="collapse list-unstyled pt-0">
-                        <li><a href="all_comment.php">All Comment</a></li>
-                    </ul>
-                </li>
-            </ul>
             <!-- End Main Navigation -->
         </nav>
         <!-- End Side Navbar -->

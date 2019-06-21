@@ -43,12 +43,17 @@
         <!-- End Page Header -->
         <!-- Begin Row -->
         <div class="row">
-            <div class="col-xl-6 col-6">
+            <div class="col-xl-6 col-6 offset-3">
                 <div class="widget has-shadow">
                     <div class="widget-body">
 <?php 
-
+$id = $_GET['edit'];
+$selectSlider = "SELECT * FROM slider WHERE id='$id'";
+$sliderQuery = query($selectSlider);
+$row  = mysqli_fetch_assoc($sliderQuery);
+$dataImage = $row['slider_image'];
     if (isset($_POST['add_slider'])) {
+        $id = $_GET['edit'];
         $slider_title = real_escape($_POST['slider_title']);
         $slider_typer = real_escape($_POST['slider_typer']);
         $slider_dis   = real_escape($_POST['slider_dis']);
@@ -77,7 +82,7 @@
                                         $img_des      = "upload/slider/".$img_new_name;
                                         $img_move     = move_uploaded_file($img_tmp,$img_des);
 
-                                        $insert_slider = "INSERT INTO slider(slider_title,slider_typer, slider_dis,slider_show,slider_image) VALUES('$slider_title','$slider_typer','$slider_dis','$slider_show','$img_des')";
+                                        $insert_slider = "UPDATE slider SET slider_title='$slider_title',slider_typer='$slider_typer',slider_dis='$slider_dis',slider_show='$slider_show',slider_image='$img_des' WHERE id = '$id'";
                                         $slider_sql    = query($insert_slider);
                                         if (!$slider_sql) {
                                             die("QUERY FAILED " . mysqli_error($dbconn));
@@ -97,7 +102,14 @@
                             $screen_err = "Screen is required";
                         }
                     }else {
-                        $img_err = "Images is required";
+                        $img_des = $dataImage;
+                        $insert_slider = "UPDATE slider SET slider_title='$slider_title',slider_typer='$slider_typer',slider_dis='$slider_dis',slider_show='$slider_show',slider_image='$img_des' WHERE id = '$id'";
+                        $slider_sql    = query($insert_slider);
+                        if (!$slider_sql) {
+                            die("QUERY FAILED " . mysqli_error($dbconn));
+                        }else {
+                            header("Location: slider.php");
+                        }
                     }
                 }else {
                     $des_err = "Description is required";
@@ -110,13 +122,14 @@
         }
     }
 
+
 ?>
 
                         <form class="form-horizontal dropzone" action="" method="post" enctype="multipart/form-data">
                             <div class="form-group row d-flex align-items-center mb-5">
                                 <label class="col-lg-3 form-control-label">Slider Title</label>
                                 <div class="col-lg-9">
-                                    <input type="text" name="slider_title" class="form-control" value="<?php if(isset($slider_title)){echo $slider_title;} ?>">
+                                    <input type="text" name="slider_title" class="form-control" value="<?php echo $row['slider_title'] ?>">
                                     <span style="color: #f00"><?php if(isset($title_err)) { echo $title_err; } ?></span>
                                 </div>
                             </div>
@@ -125,7 +138,7 @@
                             <div class="form-group row d-flex align-items-center mb-5">
                                 <label class="col-lg-3 form-control-label">Slider Typer text</label>
                                 <div class="col-lg-9">
-                                    <input type="text" name="slider_typer" class="form-control" value="<?php if(isset($slider_typer)){echo $slider_typer;} ?>">
+                                    <input type="text" name="slider_typer" class="form-control" value="<?php echo $row['slider_typer'] ?>">
                                     <span style="color: #f00"><?php if(isset($typer_err)) { echo $typer_err; } ?></span>
                                 </div>
                             </div>
@@ -134,7 +147,7 @@
                                 <label class="col-lg-3 form-control-label">Slider Short Description
 </label>
                                 <div class="col-lg-9">
-                                    <textarea name="slider_dis" class="form-control"  rows="10"><?php if(isset($slider_dis)){echo $slider_dis;} ?></textarea>
+                                    <textarea name="slider_dis" class="form-control"  rows="10"><?php echo $row['slider_title'] ?></textarea>
                                     <span style="color: #f00"><?php if(isset($des_err)) { echo $des_err; } ?></span>
                                 </div>
                             </div>
@@ -142,6 +155,7 @@
                             <div class="form-group row d-flex align-items-center mb-5">
                                 <label class="col-lg-3 form-control-label">Slider Image (Max Size 2MB and 1200X800)</label>
                                 <div class="col-lg-9">
+                                    <img src="<?php echo $dataImage; ?>" alt="ERROR" style='width:200px'>
                                     <input type="file" name="slider_img" class="form-control">
                                     <span style="color: #f00"><?php if(isset($img_err)) { echo $img_err; } ?></span>
                                 </div>
@@ -166,74 +180,6 @@
                             </div>
 
                         </form>
-
-
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="col-xl-6 col-6">
-                <div class="widget has-shadow">
-                    <div class="widget-body">
-
-                        <div class="widget-body">
-                            <div class="table-responsive">
-                                <table id="sorting-table" class="table mb-0 table-hover ">
-                                    <thead>
-                                        <tr>
-                                            <th>ID</th>
-                                            <th>Images</th>
-                                            <th>Title</th>
-                                            <th>Typer</th>
-                                            <th>Show</th>
-                                            <th>Actions</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    <?php 
-
-                                        $select_slider = "SELECT * FROM slider";
-                                        $slider_sql    = query($select_slider);
-                                        $c = 0;
-                                        while ($row = mysqli_fetch_assoc($slider_sql)):
-                                            $c++;
-                                    ?>
-                                        <tr>
-                                            <td><span class="text-primary"><?php echo $c; ?></span></td>
-                                            <td><img src="<?php echo $row['slider_image'] ?>" alt="Loading Error!" style="width:100px;"></td>
-                                            <td><?php echo $row['slider_title'] ?></td>
-                                            <td><?php echo $row['slider_typer'] ?></td>
-                                            <td><?php echo $row['slider_show'] ?></td>
-                                            <td class="td-actions">
-                                                <a href="edit_slider.php?edit=<?php echo $row['id'] ?>"><i class="la la-edit edit"></i></a>
-                                                <a href="slider.php?delete=<?php echo $row['id'] ?>"><i class="la la-close delete"></i></a>
-                                            </td>
-                                        </tr>
-                                    <?php endwhile ?>
-
-
-                                    </tbody>
-                                </table>
-<?php 
-
-    if (isset($_GET['delete'])) {
-        $id          = real_escape($_GET['delete']);
-        $post_delete = "DELETE FROM slider WHERE id='$id'";
-        $delete_sql  = query($post_delete); 
-        if (!$delete_sql) {
-            die("DELETION ERROR " . mysqli_error($dbconn));
-        }else {
-            header("Location: slider.php");
-        }
-    }
-
-?>
-                            </div>
-                        </div>
 
 
                     </div>

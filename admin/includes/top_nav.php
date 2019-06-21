@@ -133,7 +133,7 @@
                                     Faq
                                 </a>
                             </li>
-                            <li><a rel="nofollow" href="pages-login.html" class="dropdown-item logout text-center"><i class="ti-power-off"></i></a></li>
+                            <li><a rel="nofollow" href="logout.php" class="dropdown-item logout text-center"><i class="ti-power-off"></i></a></li>
                         </ul>
                     </li>
                     <!-- End User -->
