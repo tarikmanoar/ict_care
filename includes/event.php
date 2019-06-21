@@ -16,48 +16,20 @@
 				<div class="container-fluid">
 					<!-- carousel  Events start -->
 					<div class="owl-carousel event-slides">
+						<?php 
+
+						$selectEvent = query("SELECT * FROM event");
+						while ($row = mysqli_fetch_assoc($selectEvent)):
+
+						?>
 						<div class="event-img">
-							<img src="assets/img/event-photo-1.jpg" class="img-fluid" alt="" />
+							<img src="admin/<?php echo $row['image']; ?>" class="img-fluid" alt="" />
 							<div class="event-hover">
-								<h3>Skill Compition</h3>
-								<p>Lorem Ipsum Doler Sine Content</p>
+								<h3><?php echo $row['title']; ?></h3>
+								<p><?php echo $row['description']; ?></p>
 							</div>
 						</div>
-						<div class="event-img">
-							<img src="assets/img/event-photo-2.jpg" class="img-fluid" alt="" />
-							<div class="event-hover">
-								<h3>Skill Compition</h3>
-								<p>Lorem Ipsum Doler Sine Content</p>
-							</div>
-						</div>
-						<div class="event-img">
-							<img src="assets/img/event-photo-3.jpg" class="img-fluid" alt="" />
-							<div class="event-hover">
-								<h3>Skill Compition</h3>
-								<p>Lorem Ipsum Doler Sine Content</p>
-							</div>
-						</div>
-						<div class="event-img">
-							<img src="assets/img/event-photo-4.jpg" class="img-fluid" alt="" />
-							<div class="event-hover">
-								<h3>Skill Compition</h3>
-								<p>Lorem Ipsum Doler Sine Content</p>
-							</div>
-						</div>
-						<div class="event-img">
-							<img src="assets/img/event-photo-5.jpg" class="img-fluid" alt="" />
-							<div class="event-hover">
-								<h3>Skill Compition</h3>
-								<p>Lorem Ipsum Doler Sine Content</p>
-							</div>
-						</div>
-						<div class="event-img">
-							<img src="assets/img/event-photo-6.jpg" class="img-fluid" alt="" />
-							<div class="event-hover">
-								<h3>Skill Compition</h3>
-								<p>Lorem Ipsum Doler Sine Content</p>
-							</div>
-						</div>
+					<?php endwhile ?>
 					</div>
 					<!-- carousel  Events end -->
 				</div>

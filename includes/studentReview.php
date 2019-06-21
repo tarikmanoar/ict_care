@@ -15,30 +15,25 @@
 			</div>
 		</div>	
 		<div class="owl-carousel student-slider-area">
+			<?php 
+
+			$select_cat = "SELECT * FROM review";
+            $cat_sql    = query($select_cat);
+            while($row = mysqli_fetch_assoc($cat_sql)):
+			?>
 			<div class="student-slider">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 offset-md-3">
 							<div class="popup-video-area">
-								<img src="assets/img/hero-area-bg.jpg" alt="" />
-								<a id="youtube-video-one" href="https://www.youtube.com/watch?v=11O8oXgAGhc"><i class="fa fa-play"></i></a>
+								<img src="admin/<?php echo $row['image'];?>" alt="ERROR!" />
+								<a id="student-area-video" href="<?php echo $row['video'];?>"><i class="fa fa-play"></i></a>
 							</div>	
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="student-slider-2">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 offset-md-3">
-							<div class="popup-video-area">
-								<img src="assets/img/hero-area-bg.jpg" alt="" />
-								<a id="student-area-video" href="https://www.youtube.com/watch?v=t7vrxLzMtMw"><i class="fa fa-play"></i></a>
-							</div>	
-						</div>
-					</div>
-				</div>
-			</div>
+		<?php endwhile ?>
 		</div>
 		
 		

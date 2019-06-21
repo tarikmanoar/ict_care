@@ -31,6 +31,7 @@
                 <li><a href="team_members.php"><i class="la la-group"></i><span>Team Members</span></a></li>
                 <li><a href="teachers.php"><i class="la la-user"></i><span>Teachers</span></a></li>
                 <li><a href="goal.php"><i class="la la-bullseye"></i><span>Goal</span></a></li>
+                <li><a href="student_archive.php"><i class="la la-user"></i><span>Student Archive</span></a></li>
                 <li><a href="event.php"><i class="la  la-mortar-board "></i><span>Event</span></a></li>
 
                 <li><a href="#dropdown-icons" aria-expanded="false" data-toggle="collapse"><i class="la la-users"></i><span>Users</span></a>

@@ -24,7 +24,7 @@
 							<div class="member-img">
 								<img src="admin/<?php echo $row['images'] ?>" alt="ERROR!">
 							</div>
-							<div class="member-desc">
+							<div class="member-desc" style=" min-height: 200px;">
 								<h3><?php echo $row['name'] ?></h3>
 								<h5><?php echo $row['position'] ?></h5>
 								<p><?php echo $row['about'] ?></p>
