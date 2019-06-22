@@ -46,5 +46,15 @@
 	<script src="assets/js/typer.js"></script>
 	<script src="assets/js/jquery.magnific-popup.min.js"></script>
 	<script src="assets/js/jquery.sticky.js"></script>
-	<script src="assets/js/main.js"></script>	
+	<script src="assets/js/main.js"></script>
+	<script>
+	$(window).load(function(e) {
+        $("#bn1").breakingNews({
+			effect		:"slide-h",
+			autoplay	:true,
+			timer		:3000,
+			color		:"red"
+		});
+    });
+ </script>	
 </html>			

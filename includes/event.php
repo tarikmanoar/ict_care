@@ -23,7 +23,7 @@
 
 						?>
 						<div class="event-img">
-							<img src="admin/<?php echo $row['image']; ?>" class="img-fluid" alt="" />
+							<img src="2015/<?php echo $row['image']; ?>" class="img-fluid" alt="" />
 							<div class="event-hover">
 								<h3><?php echo $row['title']; ?></h3>
 								<p><?php echo $row['description']; ?></p>

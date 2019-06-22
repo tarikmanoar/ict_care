@@ -44,7 +44,7 @@
 				?>				
 					<div class="col-md-4 section-padding ">
 						<div class="card-area-img portfolio-item">
-							<img src="admin/<?php echo $row['image']; ?>" alt="ERROR!" />
+							<img src="2015/<?php echo $row['image']; ?>" alt="ERROR!" />
 						</div>
 						<div class="card-area-content">
 							<h5 class="text-dark"><?php echo $row['title']; ?></h5>

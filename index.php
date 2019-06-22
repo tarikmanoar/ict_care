@@ -1,7 +1,32 @@
 <?php include "includes/header.php" ?>
 <div class="row">
 	<div class="col-md-12">
-		<div class="progress" style="height:50px; font-size: 24px;">
+		<div class="breakingNews" id="bn1" style="background: #f44a5685;">
+	    	<div class="bn-title"><h2>News the manaor</h2><span></span></div>
+	    	<!-- <marquee  direction="up">The Name o</marquee> -->
+	        <ul>
+	        <?php 
+		  		$selectNews = query("SELECT * FROM news ORDER BY id DESC ");
+		  		if (mysqli_num_rows($selectNews) > 0){
+		  				while ($row = mysqli_fetch_assoc($selectNews)) {
+		  				    ?>
+								<li><a href="#"><?php echo $row['newsTitle']; ?></a></li>
+		  				    <?php
+		  				}
+		  			}
+		  	?>
+	        </ul>
+	        <div class="bn-navi" style="right: 120px;">
+	        	<span></span>
+	            <span></span>
+	        </div>
+	        <div class="date" style=" float: right;background: #404040; padding: 7px; color: #fff; font-family: 'PT Sans', sans-serif;font-weight: bolder;border-radius: 25px 0px 25px 0px;">
+	        	<?php echo date('d - M - Y'); ?>
+	        </div>
+    	</div>
+
+
+<!-- 		<div class="progress" style="height:50px; font-size: 24px;">
 		  <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:80px;height:50px;color: #fff">
 		  	<b>News :</b>
 		  </div>
@@ -22,7 +47,7 @@
 
 		  </div>
 
-		</div>
+		</div> -->
 	</div>
 </div>
 <?php include "includes/nav.php" ?>		
