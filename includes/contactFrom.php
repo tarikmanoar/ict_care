@@ -69,7 +69,7 @@
 
 
 					mail($mailTO,$subject,$txt,$header);
-					header("Location: index.php");
+					header("Location: team.php");
 
 				}
 
