@@ -23,7 +23,7 @@
 						?>
 						<div class="col-md-4">
 							<div class="goals-area-border portfolio-item" style="min-height: 230px;">
-								<img src="admin/<?php echo $row['image'] ?>" alt="" />
+								<img src="2015/<?php echo $row['image'] ?>" alt="" />
 								<h6><?php echo $row['title'] ?></h6>
 								<p><?php echo $row['details'] ?></p>
 							</div>

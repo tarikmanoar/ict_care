@@ -26,7 +26,7 @@
                 ?>				
 					<div class="col-md-4 section-padding ">
 						<div class="card-area-img portfolio-item">
-							<img src="admin/<?php echo $row['course_image']; ?>" alt="" />
+							<img src="2015/<?php echo $row['course_image']; ?>" alt="" />
 						</div>
 						<div class="card-area-content">
 							<h5 class="text-dark text-center"><?php echo $row['course_title']; ?></h5>

@@ -5,7 +5,7 @@
                 $slider_sql    = query($select_slider);
                 while ($row = mysqli_fetch_assoc($slider_sql)):
             ?>
-			<div class="slider-area" style="background:url('admin/<?php echo $row['slider_image'] ?>') no-repeat;background-size: cover;min-height: 588px;height: 100%;width: 100%;">
+			<div class="slider-area" style="background:url('2015/<?php echo $row['slider_image'] ?>') no-repeat;background-size: cover;min-height: 588px;height: 100%;width: 100%;">
 				<div class="container">
 					<div class="row">
 						<div class="col-xl-6 offset-md-3">

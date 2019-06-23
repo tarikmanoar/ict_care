@@ -22,7 +22,7 @@
 					<div class="col-md-4 col-sm-6 col-xs-12">
 						<div class="speakers-member wow fadeIn animated" data-wow-delay="0.1s" style="visibility: visible;-webkit-animation-delay: 0.1s; -moz-animation-delay: 0.1s; animation-delay: 0.1s;">
 							<div class="member-img">
-								<img src="admin/<?php echo $row['images'] ?>" alt="ERROR!">
+								<img src="2015/<?php echo $row['images'] ?>" alt="ERROR!">
 							</div>
 							<div class="member-desc" style=" min-height: 200px;">
 								<h3><?php echo $row['name'] ?></h3>

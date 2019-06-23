@@ -26,7 +26,7 @@
 					<div class="row">
 						<div class="col-md-6 offset-md-3">
 							<div class="popup-video-area">
-								<img src="admin/<?php echo $row['image'];?>" alt="ERROR!" />
+								<img src="2015/<?php echo $row['image'];?>" alt="ERROR!" />
 								<a id="student-area-video" href="<?php echo $row['video'];?>"><i class="fa fa-play"></i></a>
 							</div>	
 						</div>

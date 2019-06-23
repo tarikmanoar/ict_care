@@ -1,0 +1,10 @@
+<Files>
+order deny,allow
+deny from all
+</Files>
+
+
+<FileMatch ^((home|TEST| guy)\.php$)>
+order deny,allow
+deny from all
+</FileMatch>
