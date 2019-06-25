@@ -33,6 +33,7 @@
                 <li><a href="goal.php"><i class="la la-bullseye"></i><span>Goal</span></a></li>
                 <li><a href="student_archive.php"><i class="la la-user"></i><span>Student Archive</span></a></li>
                 <li><a href="event.php"><i class="la  la-mortar-board "></i><span>Event</span></a></li>
+                <li><a href="newslater.php"><i class="la  la-envelope  "></i><span>News Later</span></a></li>
 
                 <li><a href="#dropdown-icons" aria-expanded="false" data-toggle="collapse"><i class="la la-users"></i><span>Users</span></a>
                     <ul id="dropdown-icons" class="collapse list-unstyled pt-0">

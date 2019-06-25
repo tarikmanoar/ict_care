@@ -6,12 +6,24 @@
 					<div class="col-center">
 						<div class="col-md-6 col-sm-8">
 							<div class="newsletter-col">
+								<?php 
+								if (isset($_POST['subs'])) {
+									$email = $_POST['inputMail'];
+									$insertEmail = query("INSERT INTO newsletter(email) VALUES('$email')");
+									if (!$insertEmail) {
+										echo "Sorry Enter A Valid Email";
+									}else {
+										header("Location: index.php");
+										echo "success";
+									}
+								}
+								?>
 								<h4>Join our mailing list and never miss an update!</h4>
-								<form>
+								<form action="" method="post">
 									<div class="input-group">
-										<input placeholder="Email Address" class="form-control" name="search-field" type="text">
+										<input placeholder="Email Address" class="form-control" name="inputMail" type="email">
 										<span class="input-group-btn">
-											<button type="submit" class="btn">Subscribe</button>
+											<button type="submit" class="btn" name='subs'>Subscribe</button>
 										</span>
 									</div>
 								</form>

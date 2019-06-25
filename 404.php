@@ -8,6 +8,50 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="assets/css/404.css" type="text/css" />
 		<title>Hello, world!</title>
+		<style>
+			body {
+    height: 100vh;
+    background: #88DCD5;
+    display: grid;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.container {
+  position: relative;
+  height: 600px;
+  width: 750px;
+  margin: auto;
+}
+
+.container svg {
+  height: 100%;
+}
+p, a {
+    margin: 0;
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #032C3F;
+    font-size: 24px;
+  }
+ .textA {
+    top: 162px;
+    left: 270px;
+    transform: rotate(-4deg);
+  }
+  .textB {
+    font-weight: 700;
+    font-size: 135px;
+    top: 175px;
+    left: 290px;
+    transform: rotate(-4deg);
+  }
+  .textC {
+    top: 365px;
+    left: 440px;
+    font-size: 30px;
+    transform: rotate(1deg);
+  }
+		</style>
 	</head>
 	<body>
 <div class="container">
