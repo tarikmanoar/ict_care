@@ -50,7 +50,7 @@
 						<div class="speaker-col wow fadeInLeft  animated" data-wow-duration=".5s" data-wow-delay="0s" style="visibility: visible; animation-duration: 0.5s; animation-delay: 0s; animation-name: fadeInLeft;min-height: 390px;">
 							<div class="speaker-box" style="min-height: 215px;">
 								<div class="pic">
-									<img src="admin/<?php  echo $row['image']; ?>" alt="">
+									<img src="2015/<?php  echo $row['image']; ?>" alt="">
 									<ul class="social">
 										<li><a href="<?php  echo $row['facebook']; ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
 										<li><a href="<?php  echo $row['twitter']; ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>

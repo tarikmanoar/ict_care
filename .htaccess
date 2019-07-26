@@ -1,1 +1,6 @@
 ErrorDocument 404 /PHP-PROJECT/ICT_CARE/404.php
+
+<Files ~ "\includes$">
+Order allow,deny
+Deny from all
+</Files>

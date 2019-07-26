@@ -13,6 +13,6 @@
 		if (strlen($text) <= $length) {
 			return $text;
 		}else {
-			return substr($text , 0, $length,);
+			return substr($text , 0, $length);
 		}
 }
