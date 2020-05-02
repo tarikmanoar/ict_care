@@ -27,6 +27,9 @@ img{
     position: fixed;
     top: 0px;
 	z-index:111;
+    width: 100% !important;
+    left: 0;
+    transition: .5s;
 }
 
 .navbar-brand>a>img{
